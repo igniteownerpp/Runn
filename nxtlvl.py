@@ -1377,10 +1377,12 @@ if __name__ == '__main__':
     asyncio.set_event_loop(loop)
     
     # Start the asyncio thread
-    Thread(target=start_asyncio_thread).start()
-    
-    # Start the user expiry check thread
-    Thread(target=check_user_expiry).start()
+    def start_asyncio_thread():
+    # your async loop logic here
+    asyncio.run(main())
+
+# then start the thread
+Thread(target=start_asyncio_thread).start()
 
     while True:
         try:
